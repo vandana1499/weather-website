@@ -2,7 +2,7 @@ const request=require('request');
 
 const forecast=(latitude,longitude,callback)=>
 {
-    const url="http://api.weatherstack.com/current?access_key=5ea5a209984d85d401e2d52c1d0bf409&query="+encodeURIComponent(latitude)+","+encodeURIComponent(longitude)+"&units=f";
+    const url="http://api.weatherstack.com/current?access_key=5ea5a209984d85d401e2d52c1d0bf409&query="+encodeURIComponent(latitude)+","+encodeURIComponent(longitude);
 
     request({url,json:true},(error,{body})=>{
 
@@ -18,7 +18,7 @@ const forecast=(latitude,longitude,callback)=>
         {
             callback(undefined,{
                 description:body.current.weather_descriptions,
-
+                humidity:body.current.humidity,
                 temperature:body.current.temperature,
                 feelslike:body.current.feelslike
             })
