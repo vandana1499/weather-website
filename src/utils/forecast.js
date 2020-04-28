@@ -16,11 +16,14 @@ const forecast=(latitude,longitude,callback)=>
         }
         else 
         {
+            
             callback(undefined,{
                 description:body.current.weather_descriptions,
-                humidity:body.current.humidity,
+              
                 temperature:body.current.temperature,
-                feelslike:body.current.feelslike
+                feelslike:body.current.feelslike,
+                humidity:body.current.humidity
+                
             })
         }
 

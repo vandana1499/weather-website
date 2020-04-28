@@ -91,13 +91,13 @@ app.get('/weather',(req,res)=>{
         return res.send({error:error});
         }
         
-          forecast(latitude, longitude, (error, {description,temperature,feelslike}={}) => {
+          forecast(latitude, longitude, (error, {description,temperature,feelslike,humidity}={}) => {
             if(error)
             {
               return res.send({error})
             }
 
-            res.send({location,description,temperature,feelslike,address:req.query.address})
+            res.send({location,description,temperature,feelslike,humidity,address:req.query.address})
             // console.log(location);
             // console.log(description+". It is currently "+temperature+" farenhite. It feels like "+feelslike+" farenhite.")
           })
