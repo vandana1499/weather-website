@@ -28,7 +28,8 @@ weatherForm.addEventListener('submit',(event)=>{
         {
          return  messageOne.textContent=data.error
         }
-         const forecast=data.description+".It is currently "+data.temperature+" degree.It feels like " +data.feelslike+" degree.Humidity is "+data.humidity
+        
+         const forecast=data.description+".It is currently "+data.temperature+" degree.It feels like " +data.feelslike+" degree. Humidity is  " + data.humidity
 
          messageOne.textContent=data.location;
          messageTwo.textContent=forecast;
